@@ -55,6 +55,7 @@ func main() {
 	router.POST("/api/v1/query", queryHandler.Query)
 
 	log.Printf("AI Operations Copilot listening on :%s", cfg.Port)
+	log.Printf("using OpenRouter model: %s", cfg.OpenRouterModel)
 	if err := router.Run(":" + cfg.Port); err != nil {
 		log.Fatal(err)
 	}
